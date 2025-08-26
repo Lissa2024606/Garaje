@@ -8,10 +8,11 @@ namespace Garaje.clase.cs
 {
     internal class ClasesGaraje
     {
-        private int numeroGaraje;
-        private string descripcion;
-        private int capacidadEspacios;
-        private int espaciosOcupados;
+        // Atributos
+        private int numeroGaraje { get; set; }
+        private string descripcion { get; set; }
+        private int capacidadEspacios { get; set; }
+        private int espaciosOcupados { get; set; }
         public ClasesGaraje(int numeroGaraje, string descripcion, int capacidadEspacios, int espaciosOcupados)
         {
             this.numeroGaraje = numeroGaraje;
@@ -19,13 +20,17 @@ namespace Garaje.clase.cs
             this.capacidadEspacios = capacidadEspacios;
             this.espaciosOcupados = espaciosOcupados;
         }
-        // Método para retornar el número de espacios disponibles
+         
         public int obtenerEspaciosDisponibles()
         {
             return capacidadEspacios - espaciosOcupados;
-        }   
-
-
+        }
+        
+        public void ocuparEspacio(int espacioSolicitado )
+        {
+            espaciosOcupados = espaciosOcupados + espacioSolicitado;
+        }
     }
-    
-    
+}
+
+
